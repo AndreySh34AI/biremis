@@ -1,0 +1,21 @@
+{
+  "guard_denied_hidden": true,
+  "hidden_bypass_canary": true,
+  "hidden_full_canary": true,
+  "hidden_peer_dialog_canary": true,
+  "hidden_search_canary": true,
+  "hidden_sent": true,
+  "hidden_status": "created",
+  "logging_restored": true,
+  "negative_auth_unregistered": true,
+  "negative_completed": true,
+  "negative_error_code": 401,
+  "negative_unexpected_success": null,
+  "visible_full_canary": true,
+  "visible_sent": true,
+  "visible_status": "created",
+  "run_id": "20260927-4A87DE8F",
+  "runtime_framework_uuid": "C491D014-89CA-3FF9-B005-CE12648182ED",
+  "checkout_sha": "42a84aec8abf72e54958ddf8ca9480514cc0d390",
+  "runtime_matches_checkout": "unverified"
+}
