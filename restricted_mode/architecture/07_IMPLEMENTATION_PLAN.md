@@ -13,13 +13,17 @@
 | G4 Coverage | Зелёный vertical slice | Search, groups/topics, folders, counts, forward/references, shared media, contacts, stories, calls, extensions | Полная path matrix; неизвестный путь не допускается в protected release |
 | G5 Acceptance | Все обязательные surfaces реализованы | Миграции/restore/rotation, device/security tests, upstream regression и независимое review | Принятая модель угроз доказана в указанных пределах; только после этого реальное использование |
 
+**Уточнение 2026-09-28:** D01 принят (T1, без T2/T3/T4), ACR-001 разрешён выбором scope. G1/G2 целиком не пройдены. Прямой RPC AUTH-01 не является провалом T1; приоритет — штатные пути EXT-01, видимость D02, уведомления D03 и оставшиеся инварианты.
+
+**T2-01 — отдельное необязательное направление исследования.** Использует inventory STORAGE-01, но не является входным условием G2–G5 и не задерживает выпуск T1 само по себе. Выявленные нарушения обязательных требований учитываются независимо от статуса T2. Реализация защиты T2 не включена автоматически в план.
+
 ## Зависимости
 
 ```mermaid
 flowchart TD
     G0[Первый проход] --> AUTH[AUTH-01]
     G0 --> Inventory[EXT-01: полный inventory]
-    AUTH --> Decision[D01: online и угрозы]
+    AUTH --> Decision[D01 принят: T1]
     AUTH --> Storage[STORAGE-01]
     Inventory --> Notify[NOTIFY-01]
     Decision --> Sync[SYNC-01]

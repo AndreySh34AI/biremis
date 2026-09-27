@@ -3,11 +3,15 @@
 **DRAFT / NOT APPROVED**. Дата: 2026-09-27. Commit: `42a84aec8abf72e54958ddf8ca9480514cc0d390`.
 Это проект отсутствующего SECURITY_INVARIANTS.md. ID I01–I10 сохранены из brief. CODE означает исследование исходников; ни один инвариант Restricted не получил runtime PASS.
 
+**Уточнение 2026-09-28:** [D01 принят](09_OPEN_DECISIONS.md): обязательна T1, T2/T3/T4 исключены. I01 оценивается для штатных путей доступа; I06 и запрет UI-only реализации сохраняются. Проверки копий store могут использоваться разработчиком для проверки I02/ingress, но не означают обещание forensic-защиты от T2.
+
+**Необязательное исследование:** части V02/V11 по анализу извлечённой копии и offline-перебору выполняются в [T2-01](08_TASKS.md). Их статус не является условием выпуска T1. Проверки I02, штатных утечек, PIN/recovery и остальных обязательных свойств сохраняются; результаты T2-01 не смешиваются с PASS T1.
+
 ## Свойства и покрытие
 
 | ID | Проект обязательного свойства | Требования / код | Проверки | Статус |
 |---|---|---|---|---|
-| I01 | Full secrets недоступны Restricted/Locked в принятой модели угроз | R01/R08/R09; E02–E07/E09/E18/E19 | V01/V02/V04/V11 | BLOCKED D01/D07; текущие общие secrets не удовлетворяют проекту |
+| I01 | Full secrets недоступны Restricted/Locked в принятой модели угроз | R01/R08/R09; E02–E07/E09/E18/E19 | V03/V04/V05/V10/V11/V12 | Не реализовано; D01 принят, D07 открыт. Полная auth сама по себе не провал T1; штатный доступ к Full secrets должен быть закрыт |
 | I02 | Restricted persistence не содержит запрещённой декодируемой истории | R03/R09; E08/E14–E20/E23/E24 | V02/V05/V06/V09 | Не реализовано; найдены независимые stores и ingress |
 | I03 | При отсутствии валидной policy чувствительный доступ закрыт | R03/R05; E11 | V03/V09/V10 | Не реализовано; default LockState нельзя использовать как policy fallback |
 | I04 | После отзыва нет операций старой сессии | R06/R08; E03/E13/E22 | V04/V09 | Не доказано; process-local exclusivity не покрывает extensions |
@@ -24,8 +28,8 @@
 
 | ID | Setup / действия | Ожидаемое наблюдение | Среда, инструменты и evidence | Ограничение |
 |---|---|---|---|---|
-| V01 Auth authority | S; в кандидатном Restricted runtime запросить hidden history напрямую, минуя UI, затем после lock | Для принятого T3/T4 запрос не должен раскрыть контент; успех запроса опровергает кандидата | Тестовый network harness, response assertion, список доступных auth paths | Один отказ из-за неизвестного peer/access hash не доказывает ограничение полномочий |
-| V02 Key/store closure | S; записать media/history, lock; исследовать копию контейнера, metadata, keychain representations, WAL/SHM/temp и backups | Ни запрещённый контент, ни материал для его раскрытия не доступны в выбранном T-уровне | Parser соответствующих форматов, DB tools, media decode; manifest и assertions | Canary grep — дополнительная проверка; отсутствия строк недостаточно |
+| V01 Auth authority | Исторический AUTH-01: прямой RPC через debugger, минуя policy | После D01 это исследование границы вне обязательной защиты; успешный RPC не провал T1 | AUTH-01_RESULT; для обязательных штатных путей — V03–V07/V09–V13 | Не считать этот опыт PASS T1; произвольный RPC исключён, штатный обход остаётся дефектом |
+| V02 Key/store closure | S; записать media/history, lock; исследовать копию контейнера, metadata, keychain representations, WAL/SHM/temp и backups | Проверка I02 и отсутствия утечек через штатные пути; стойкость извлечённой копии к T2 после D01 не заявляется | Parser соответствующих форматов, DB tools, media decode; manifest и assertions | Canary grep — дополнительная проверка; отсутствия строк недостаточно |
 | V03 PIN/policy faults | Разные/одинаковые/неверные PIN; missing/corrupt/stale policy, wrong key, cold start | Нет открытия Full; одинаковые PIN отвергаются; ошибка не удаляет Full данные | Unit/fault injection + Simulator; state transitions и file hashes | Не доказывает стойкость к offline brute force |
 | V04 Revocation | Задержать RPC, write, download, extension callback; lock и сменить сессию | Старое поколение не пишет и не выдаёт контент; новый runtime ждёт завершения | Deterministic barriers, lifecycle trace без контента, physical iPhone для suspension | dispose/deinit без наблюдений недостаточно |
 | V05 UI/API | S; search local/global, folders/archive, counters, forward/reply/mention, Saved Messages, shared media, public profile, direct deep link | Ровно согласованная таблица видимости D02, без bypass к hidden history | XCUITest + engine tests; sanitized screenshots/assertions | Пока D02 открыт, часть expected results не определена |
