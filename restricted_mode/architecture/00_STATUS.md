@@ -9,6 +9,8 @@
 
 **Необязательное направление:** по следующему решению владельца добавлен [T2-01](08_TASKS.md) — исследование извлечённых копий, ключей и возможной схемы защиты. Задача подготовлена, эксперименты не запускались. T2 не становится условием выпуска T1; T3/T4 остаются исключены.
 
+**EXT-01 выполнен (2026-09-28, CODE):** [отчёт](EXT-01_RESULT.md) содержит 45 source entries, шесть подтверждённых в baseline bundle extensions, 31 будущий тест и места проверки policy. Новые критичные пути: Notification Content direct MediaBox, Siri actions, Widget direct Postbox, Storage Usage/Downloads, sparse media calendar, system publishers и опциональный отдельный Watch. Runtime-проверки не выполнялись; D02/D03/D08 и release-покрытие остаются открыты.
+
 ## Исходное состояние
 
 - Checkout: `/Users/andrey/Work/Telegram/Telegram-iOS`.
@@ -99,7 +101,7 @@ Evidence: `/tmp/biremis-architecture-launch-smoke.json`, `/tmp/biremis-architect
 - [09_OPEN_DECISIONS.md](09_OPEN_DECISIONS.md): D01–D09 и ACR-001–003.
 - [ADR-001](adr/ADR-001-authority-before-storage.md), [ADR-002](adr/ADR-002-session-and-key-boundary.md), [ADR-003](adr/ADR-003-external-surfaces-gate.md): Proposed, не Accepted.
 
-Следующий конкретный шаг — уточнить D02/D03 и сопоставить штатные пути доступа T1 с policy boundaries и тестами; провести независимое review опыта и обновлённой модели. Одновременно возможен независимый документальный EXT-01, но автоматический запуск нескольких агентов не разрешён brief.
+Следующий конкретный шаг — принять D02/D03/D08 по вопросам EXT-01_RESULT, затем проверить NOTIFY-01 и уточнить storage/state/lifecycle проект. Карта штатных путей и тестов подготовлена; независимое REVIEW-01 и runtime-покрытие ещё требуются. Автоматический запуск нескольких агентов не разрешён brief.
 
 ## Ограничения
 

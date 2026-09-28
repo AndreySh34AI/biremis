@@ -1,0 +1,41 @@
+{
+  "scope": "workspace source under Telegram and submodules: swift/m/h/plist/BUILD; generated code and remote dependencies not covered",
+  "results": [
+    {
+      "pattern": "import ActivityKit",
+      "matching_files": [],
+      "exit_code": 1
+    },
+    {
+      "pattern": "ActivityConfiguration",
+      "matching_files": [],
+      "exit_code": 1
+    },
+    {
+      "pattern": "AppShortcutsProvider",
+      "matching_files": [],
+      "exit_code": 1
+    },
+    {
+      "pattern": ":\\s*AppIntent\\b",
+      "matching_files": [],
+      "exit_code": 1
+    },
+    {
+      "pattern": "CPTemplateApplicationScene",
+      "matching_files": [],
+      "exit_code": 1
+    },
+    {
+      "pattern": "import CarPlay",
+      "matching_files": [],
+      "exit_code": 1
+    },
+    {
+      "pattern": "NSSupportsLiveActivities",
+      "matching_files": [],
+      "exit_code": 1
+    }
+  ],
+  "interpretation": "No match is a bounded search result, not proof of runtime absence."
+}

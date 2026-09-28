@@ -75,6 +75,10 @@ flowchart TD
 
 Не считать готовыми гарантиями: makeExclusiveKeychain (только один процесс), supplementary flag, AppLock overlay, clearCaches, deinit, media file deletion, Data Protection без анализа класса файлов и угроз. Для Restricted нужно проверить все неявные открытия Full, а также fallback `removeDatabaseOnError` при ошибке ключа.
 
-## Неполное покрытие
+## Дополнение EXT-01
+
+На SHA `87a048874df13b1f865f7ddfa1855b04e7367692` выполнен [EXT-01](EXT-01_RESULT.md): 45 новых исходных якорей X01–X45, bundled target inventory, матрица штатных путей/границ и 31 спецификация теста. Установлены отдельные пути sparse media/calendar, Storage Usage, Siri actions, Notification Content direct MediaBox, widget provider/picker, exports/log UI, Now Playing и Watch/TDLib. Нижеследующее описывает пробелы **первого прохода**; актуальные остающиеся пробелы перечислены в EXT-01_RESULT. Полнота безопасности не доказана.
+
+## Неполное покрытие первого прохода
 
 Точки stories, contacts, calls и exports найдены, но их полный граф не восстановлен. ChatListView/MessageHistoryView и UI consumers найдены; все ветви folder/archive/counters/forward/shared media/navigation не прочитаны целиком. Live Activities/App Intents/CarPlay: поиск выбранных символов не доказывает отсутствия, найдено `.allowInCarPlay`; нужна инвентаризация всех bundled targets и capabilities. Watch имеет отдельный исходный проект/TDLib; его независимый аккаунт и зеркалирование push не исследованы. Backup restore, реальные файлы/Keychain и личные данные не открывались. Эти пробелы отражены в 06/08, а не выданы за PASS.

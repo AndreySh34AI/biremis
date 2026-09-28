@@ -1,0 +1,38 @@
+{
+  "artifact": "previous baseline Simulator bundle, not rebuilt for EXT-01",
+  "bundle_available": true,
+  "extensions": [
+    {
+      "name": "BroadcastUploadExtension.appex",
+      "extension_point": "com.apple.broadcast-services-upload",
+      "minimum_os": "13.0"
+    },
+    {
+      "name": "IntentsExtension.appex",
+      "extension_point": "com.apple.intents-service",
+      "minimum_os": "13.0"
+    },
+    {
+      "name": "NotificationContentExtension.appex",
+      "extension_point": "com.apple.usernotifications.content-extension",
+      "minimum_os": "13.0"
+    },
+    {
+      "name": "NotificationServiceExtensionv1.appex",
+      "extension_point": "com.apple.usernotifications.service",
+      "minimum_os": "13.0"
+    },
+    {
+      "name": "ShareExtension.appex",
+      "extension_point": "com.apple.share-services",
+      "minimum_os": "13.0"
+    },
+    {
+      "name": "WidgetExtension.appex",
+      "extension_point": "com.apple.widgetkit-extension",
+      "minimum_os": "14.0"
+    }
+  ],
+  "watch_directory_present": false,
+  "signature_entitlements_checked": false
+}

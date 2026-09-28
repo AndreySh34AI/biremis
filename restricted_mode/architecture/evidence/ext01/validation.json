@@ -1,0 +1,12 @@
+{
+  "base_sha": "87a048874df13b1f865f7ddfa1855b04e7367692",
+  "source_entries_checked": 45,
+  "test_specifications": 31,
+  "source_hashes_and_anchors": "PASS",
+  "markdown_links_tables_fences_whitespace": "PASS",
+  "json_parse": "PASS",
+  "change_scope": "documentation_only",
+  "security_runtime_tests": "NOT_RUN",
+  "build": "NOT_RUN: production source and BUILD unchanged",
+  "independent_review": "NOT_PERFORMED"
+}

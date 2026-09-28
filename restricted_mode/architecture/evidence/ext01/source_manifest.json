@@ -1,0 +1,890 @@
+{
+  "base_sha": "87a048874df13b1f865f7ddfa1855b04e7367692",
+  "date": "2026-09-28",
+  "evidence_level": "CODE; no security runtime tests",
+  "sources": [
+    {
+      "id": "X01",
+      "path": "Telegram/BUILD",
+      "sha256": "73dc5fa3010534c23596af1a6e17badb34202ff6f38b5473940ba8142f180095",
+      "anchors": [
+        {
+          "line": 73,
+          "needle": "name = \"disableExtensions\""
+        },
+        {
+          "line": 105,
+          "needle": "name = \"embedWatchApp\""
+        },
+        {
+          "line": 491,
+          "needle": "official_carplay_fragment ="
+        },
+        {
+          "line": 1268,
+          "needle": "name = \"IntentsInfoPlist\""
+        },
+        {
+          "line": 1749,
+          "needle": "name = \"TelegramWatchApp\""
+        },
+        {
+          "line": 1798,
+          "needle": "extensions = select({"
+        }
+      ]
+    },
+    {
+      "id": "X02",
+      "path": "submodules/TelegramUI/Sources/AppDelegate.swift",
+      "sha256": "5d343d7d711944166d321589b5f4f325cb0fa83b7ae5e66affc45d81b1c64b71",
+      "anchors": [
+        {
+          "line": 2546,
+          "needle": "continue userActivity:"
+        },
+        {
+          "line": 2662,
+          "needle": "CSSearchableItemActionType"
+        },
+        {
+          "line": 2787,
+          "needle": "private func openChatWhenReady"
+        },
+        {
+          "line": 2811,
+          "needle": "private func openUrlWhenReady"
+        }
+      ]
+    },
+    {
+      "id": "X03",
+      "path": "submodules/TelegramUI/Sources/AppDelegate.swift",
+      "sha256": "5d343d7d711944166d321589b5f4f325cb0fa83b7ae5e66affc45d81b1c64b71",
+      "anchors": [
+        {
+          "line": 2840,
+          "needle": "didReceive response: UNNotificationResponse"
+        },
+        {
+          "line": 2859,
+          "needle": "response.actionIdentifier == \"reply\""
+        },
+        {
+          "line": 2889,
+          "needle": "return enqueueMessages(account: account"
+        },
+        {
+          "line": 2989,
+          "needle": "carPlayOptions.insert(.allowInCarPlay)"
+        }
+      ]
+    },
+    {
+      "id": "X04",
+      "path": "submodules/TelegramUI/Sources/OpenResolvedUrl.swift",
+      "sha256": "15e2e748d91cb9f13106899c1093403620d0ec1c178c5eecb88c7966318870be",
+      "anchors": [
+        {
+          "line": 64,
+          "needle": "func openResolvedUrlImpl"
+        },
+        {
+          "line": 341,
+          "needle": "case let .channelMessage"
+        },
+        {
+          "line": 343,
+          "needle": "case let .replyThreadMessage"
+        },
+        {
+          "line": 1491,
+          "needle": "case let .story(peerId"
+        }
+      ]
+    },
+    {
+      "id": "X05",
+      "path": "submodules/ChatListUI/Sources/ChatListSearchListPaneNode.swift",
+      "sha256": "294cd86852ecb78efd61c885f030bc21901f2ade970a5cfc52e2d78167568d4f",
+      "anchors": [
+        {
+          "line": 1995,
+          "needle": "fixedRecentlySearchedPeers = context.engine.peers.recentlySearchedPeers()"
+        },
+        {
+          "line": 2246,
+          "needle": "context.engine.messages.searchLocalSavedMessagesPeers"
+        },
+        {
+          "line": 2765,
+          "needle": "context.engine.messages.searchHashtagPosts"
+        },
+        {
+          "line": 2853,
+          "needle": "searchSignals = [context.engine.messages.searchMessages"
+        }
+      ]
+    },
+    {
+      "id": "X06",
+      "path": "submodules/TelegramCore/Sources/TelegramEngine/Messages/SearchMessages.swift",
+      "sha256": "5059a08da2af5dbeb61cacb446a8acd0ce23404a4fd1d4d78c0be4e0b31670c8",
+      "anchors": [
+        {
+          "line": 80,
+          "needle": "private func mergedState"
+        },
+        {
+          "line": 308,
+          "needle": "func _internal_searchMessages"
+        },
+        {
+          "line": 684,
+          "needle": "func _internal_downloadMessage"
+        },
+        {
+          "line": 774,
+          "needle": "func fetchRemoteMessage"
+        }
+      ]
+    },
+    {
+      "id": "X07",
+      "path": "submodules/TelegramCore/Sources/TelegramEngine/Peers/SearchPeers.swift",
+      "sha256": "ba385664c1502b497be59ed1a0147b2315ac1e920147d5902f443b74ef457381",
+      "anchors": [
+        {
+          "line": 30,
+          "needle": "public func _internal_searchPeers"
+        },
+        {
+          "line": 70,
+          "needle": "updatePeers(transaction: transaction"
+        },
+        {
+          "line": 185,
+          "needle": "func _internal_searchLocalSavedMessagesPeers"
+        },
+        {
+          "line": 191,
+          "needle": "func _internal_requestMessageAuthor"
+        }
+      ]
+    },
+    {
+      "id": "X08",
+      "path": "submodules/TelegramUI/Sources/ChatHistoryViewForLocation.swift",
+      "sha256": "e777b3a2096f48d7ab1da043ba8b283d41a2b27962e6e9fb791ee43e7c417f4b",
+      "anchors": [
+        {
+          "line": 39,
+          "needle": "func chatHistoryViewForLocation"
+        },
+        {
+          "line": 249,
+          "needle": "account.viewTracker.aroundIdMessageHistoryViewForLocation"
+        }
+      ]
+    },
+    {
+      "id": "X09",
+      "path": "submodules/TelegramCore/Sources/State/AccountStateManagementUtils.swift",
+      "sha256": "f48260c69713c4b9c1141e997f8dbf7d06f8a188ff5d83623301b75ddc512f56",
+      "anchors": [
+        {
+          "line": 3910,
+          "needle": "func replayFinalState"
+        },
+        {
+          "line": 4260,
+          "needle": "transaction.addMessages(messages, location: location)"
+        },
+        {
+          "line": 5440,
+          "needle": "transaction.setStoryItems(peerId: peerId"
+        }
+      ]
+    },
+    {
+      "id": "X10",
+      "path": "submodules/TelegramCore/Sources/State/Holes.swift",
+      "sha256": "22123ce725d1ae6ea856e73e961fd7358ada179ae2b7c4b8e86a7fd3cd5b14bd",
+      "anchors": [
+        {
+          "line": 423,
+          "needle": "func fetchMessageHistoryHole"
+        },
+        {
+          "line": 1179,
+          "needle": "func fetchChatListHole"
+        }
+      ]
+    },
+    {
+      "id": "X11",
+      "path": "submodules/TelegramCore/Sources/State/FetchChatList.swift",
+      "sha256": "496d433fd5dbf3e35fc31774fa074f2922130b50945fb729ba35956aeb21671d",
+      "anchors": [
+        {
+          "line": 273,
+          "needle": "Api.functions.messages.getPinnedDialogs"
+        },
+        {
+          "line": 289,
+          "needle": "Api.functions.messages.getDialogs"
+        }
+      ]
+    },
+    {
+      "id": "X12",
+      "path": "submodules/ChatListUI/Sources/Node/ChatListNode.swift",
+      "sha256": "5aeddbc5bc9b47d659eb28368de445c20d47122f1ba806007a7c54bb229119f5",
+      "anchors": [
+        {
+          "line": 732,
+          "needle": "case let .GroupReferenceEntry(groupReferenceEntry)"
+        },
+        {
+          "line": 743,
+          "needle": "unreadCount: groupReferenceEntry.unreadCount"
+        }
+      ]
+    },
+    {
+      "id": "X13",
+      "path": "submodules/TelegramUI/Sources/ApplicationContext.swift",
+      "sha256": "09b0c06a1115f5d50b504d21ec5d45bbdc7c1850087509e196a40e288bcee33d",
+      "anchors": [
+        {
+          "line": 139,
+          "needle": "var applicationBadge:"
+        },
+        {
+          "line": 140,
+          "needle": "renderedTotalUnreadCount"
+        }
+      ]
+    },
+    {
+      "id": "X14",
+      "path": "submodules/TelegramUI/Sources/ChatControllerForwardMessages.swift",
+      "sha256": "fe952e24c1afd75804a63f71efa408c09cc089177a0bdafc91b66f347679ca84",
+      "anchors": [
+        {
+          "line": 18,
+          "needle": "func forwardMessages(messageIds:"
+        },
+        {
+          "line": 55,
+          "needle": "forwardedMessageIds: messages.map"
+        },
+        {
+          "line": 217,
+          "needle": "enqueueMessages(account: strongSelf.context.account"
+        }
+      ]
+    },
+    {
+      "id": "X15",
+      "path": "submodules/TelegramUI/Sources/Chat/ChatControllerNavigateToMessage.swift",
+      "sha256": "6b047a99010070b03c5bd2ae798d8fa684e88b9c1fac977e4c2a6511b58eb42b",
+      "anchors": [
+        {
+          "line": 27,
+          "needle": "func navigateToMessage("
+        },
+        {
+          "line": 162,
+          "needle": "self.context.sharedContext.navigateToChatController"
+        }
+      ]
+    },
+    {
+      "id": "X16",
+      "path": "submodules/TelegramUI/Components/PeerInfo/PeerInfoVisualMediaPaneNode/Sources/PeerInfoVisualMediaPaneNode.swift",
+      "sha256": "c60bb4169d19bce5da5d3d0b13db459b1681f53b4bf843cbccf7b5e627a14cd7",
+      "anchors": [
+        {
+          "line": 1266,
+          "needle": "self.listSource = self.context.engine.messages.sparseMessageList"
+        },
+        {
+          "line": 1270,
+          "needle": "self.calendarSource = self.context.engine.messages.sparseMessageCalendar"
+        }
+      ]
+    },
+    {
+      "id": "X17",
+      "path": "submodules/TelegramCore/Sources/TelegramEngine/Messages/SparseMessageList.swift",
+      "sha256": "6ef3f0fe5d918b3c51ceec9bb1d94269e91d0d91c8f246d9c81278137b9ae20b",
+      "anchors": [
+        {
+          "line": 122,
+          "needle": "Api.functions.messages.getSearchResultsPositions"
+        },
+        {
+          "line": 876,
+          "needle": "Api.functions.messages.getSearchResultsCalendar"
+        },
+        {
+          "line": 901,
+          "needle": "transaction.addMessages(parsedMessages"
+        }
+      ]
+    },
+    {
+      "id": "X18",
+      "path": "submodules/TelegramCore/Sources/TelegramEngine/Peers/GroupsInCommon.swift",
+      "sha256": "b983891da4d4bee08a311acdddef28fc26b2784633817ae1d8f0b356281aff09",
+      "anchors": [
+        {
+          "line": 59,
+          "needle": "func loadMore(limit:"
+        },
+        {
+          "line": 101,
+          "needle": "Api.functions.messages.getCommonChats"
+        },
+        {
+          "line": 127,
+          "needle": "updatePeers(transaction:"
+        }
+      ]
+    },
+    {
+      "id": "X19",
+      "path": "submodules/TelegramCore/Sources/TelegramEngine/Peers/RecentPeers.swift",
+      "sha256": "cc1668c1620e2146c7b6b3e445b9657b94c2d5f777ae4e14721870dfc2cfb6ab",
+      "anchors": [
+        {
+          "line": 51,
+          "needle": "public func _internal_managedUpdatedRecentPeers"
+        },
+        {
+          "line": 64,
+          "needle": "Api.functions.contacts.getTopPeers"
+        },
+        {
+          "line": 77,
+          "needle": "transaction.putItemCacheEntry"
+        }
+      ]
+    },
+    {
+      "id": "X20",
+      "path": "submodules/TelegramCore/Sources/TelegramEngine/Peers/RecentlySearchedPeerIds.swift",
+      "sha256": "1cfa2d4c04741f0622b4ea27e9dbdb8783a06a3abfaeeb154dd2fd46319bf210",
+      "anchors": [
+        {
+          "line": 6,
+          "needle": "func _internal_addRecentlySearchedPeer"
+        },
+        {
+          "line": 50,
+          "needle": "public func _internal_recentlySearchedPeers"
+        }
+      ]
+    },
+    {
+      "id": "X21",
+      "path": "submodules/TelegramCore/Sources/State/ContactSyncManager.swift",
+      "sha256": "609526a468d0711b86239fe73376ff7bcc0dbb4bbcc4c408a4dddf50805caecc",
+      "anchors": [
+        {
+          "line": 322,
+          "needle": "private func pushDeviceContactData"
+        },
+        {
+          "line": 328,
+          "needle": "Api.functions.contacts.importContacts"
+        },
+        {
+          "line": 346,
+          "needle": "updatePeers(transaction:"
+        }
+      ]
+    },
+    {
+      "id": "X22",
+      "path": "submodules/TelegramCore/Sources/TelegramEngine/Messages/Stories.swift",
+      "sha256": "1ce37784d375ff80cdba627d131f5e8635eda58b9441de6683526c435b1e0a80",
+      "anchors": [
+        {
+          "line": 2457,
+          "needle": "func _internal_getStoryById"
+        },
+        {
+          "line": 2466,
+          "needle": "Api.functions.stories.getStoriesByID"
+        },
+        {
+          "line": 1922,
+          "needle": "transaction.setStory(id: storyId"
+        }
+      ]
+    },
+    {
+      "id": "X23",
+      "path": "submodules/FetchManagerImpl/Sources/FetchManagerImpl.swift",
+      "sha256": "f608fb70c22cb72b5e51c12535dda06a8f59a35b4c25afd7916932a8cd89ca43",
+      "anchors": [
+        {
+          "line": 263,
+          "needle": "fetchedMediaResource(mediaBox: postbox.mediaBox"
+        },
+        {
+          "line": 266,
+          "needle": "addRecentDownloadItem(postbox:"
+        },
+        {
+          "line": 775,
+          "needle": "public func interactivelyFetched"
+        }
+      ]
+    },
+    {
+      "id": "X24",
+      "path": "submodules/TelegramUI/Components/StorageUsageScreen/Sources/StorageUsageScreen.swift",
+      "sha256": "528c2fa2ffc16602bd844367685601e97794ee6996759efb05fd25be54f35907",
+      "anchors": [
+        {
+          "line": 2338,
+          "needle": "engine.resources.collectStorageUsageStats()"
+        },
+        {
+          "line": 2392,
+          "needle": "engine.resources.renderStorageUsageStatsMessages"
+        },
+        {
+          "line": 2532,
+          "needle": "private func openPeer(peer:"
+        },
+        {
+          "line": 2762,
+          "needle": "private func openMessage(message:"
+        }
+      ]
+    },
+    {
+      "id": "X25",
+      "path": "submodules/TelegramCore/Sources/TelegramEngine/Resources/CollectCacheUsageStats.swift",
+      "sha256": "497cd83793e36af22f0c2cae6dab12ccd1f9e098017e5e1ef5d2c47ec0fe9978",
+      "anchors": [
+        {
+          "line": 216,
+          "needle": "func _internal_collectStorageUsageStats"
+        },
+        {
+          "line": 271,
+          "needle": "func _internal_renderStorageUsageStatsMessages"
+        },
+        {
+          "line": 249,
+          "needle": "transaction.getPeerChatListIndex"
+        }
+      ]
+    },
+    {
+      "id": "X26",
+      "path": "submodules/SaveToCameraRoll/Sources/SaveToCameraRoll.swift",
+      "sha256": "7371c03853cc64563d9276eb6f51548c9480de9e34a2270ebc3d979a8e688683",
+      "anchors": [
+        {
+          "line": 17,
+          "needle": "public func fetchMediaData"
+        },
+        {
+          "line": 100,
+          "needle": "public func saveToCameraRoll"
+        },
+        {
+          "line": 167,
+          "needle": "PHPhotoLibrary.shared().performChanges"
+        },
+        {
+          "line": 209,
+          "needle": "public func copyToPasteboard"
+        }
+      ]
+    },
+    {
+      "id": "X27",
+      "path": "submodules/TelegramUI/Sources/ChatControllerOpenMessageShareMenu.swift",
+      "sha256": "d43e15d41762f54b6841705a48f311fb4efa44a59995394442085ef9602a9b6c",
+      "anchors": [
+        {
+          "line": 94,
+          "needle": "    func openMessageShareMenu(id:"
+        },
+        {
+          "line": 188,
+          "needle": "let shareController = self.context.sharedContext.makeShareController"
+        }
+      ]
+    },
+    {
+      "id": "X28",
+      "path": "submodules/TelegramUI/Components/ShareExtensionContext/Sources/ShareExtensionContext.swift",
+      "sha256": "e5e2591069f4b69056987c278c4f61ce4c405ff1f2d890552c526a472f1ca6fa",
+      "anchors": [
+        {
+          "line": 553,
+          "needle": "let sentItems = sentShareItems("
+        },
+        {
+          "line": 921,
+          "needle": "let _ = passcodeEntryController("
+        },
+        {
+          "line": 738,
+          "needle": "TelegramEngine.HistoryImport"
+        }
+      ]
+    },
+    {
+      "id": "X29",
+      "path": "Telegram/SiriIntents/IntentHandler.swift",
+      "sha256": "c440970606c842fbc892b16fbb8bd8ae5ee423ca309fddcb328f29750e645155",
+      "anchors": [
+        {
+          "line": 58,
+          "needle": "override public func handler(for intent:"
+        },
+        {
+          "line": 462,
+          "needle": "public func handle(intent: INSendMessageIntent"
+        },
+        {
+          "line": 522,
+          "needle": "public func handle(intent: INSearchForMessagesIntent"
+        },
+        {
+          "line": 593,
+          "needle": "public func handle(intent: INSetMessageAttributeIntent"
+        },
+        {
+          "line": 736,
+          "needle": "public func handle(intent: INSearchCallHistoryIntent"
+        },
+        {
+          "line": 952,
+          "needle": "func provideFriendsOptionsCollection(searchTerm:"
+        }
+      ]
+    },
+    {
+      "id": "X30",
+      "path": "Telegram/WidgetKitWidget/TodayViewController.swift",
+      "sha256": "097d8f6330733cbc52c887d32814a2f42123df51cb4c5e5ea1348eaf54fa5138",
+      "anchors": [
+        {
+          "line": 68,
+          "needle": "private func getCommonTimeline"
+        },
+        {
+          "line": 132,
+          "needle": "friendsByAccount.append(accountTransaction"
+        },
+        {
+          "line": 174,
+          "needle": "transaction.getTopPeerMessageIndex"
+        },
+        {
+          "line": 219,
+          "needle": "struct Provider: IntentTimelineProvider"
+        }
+      ]
+    },
+    {
+      "id": "X31",
+      "path": "submodules/TelegramUI/Sources/WidgetDataContext.swift",
+      "sha256": "4080fc38edb430f7f2bbdcfee1fad900a4b036f6fdfc854ad0eac47faf9a214f",
+      "anchors": [
+        {
+          "line": 92,
+          "needle": "final class WidgetDataContext"
+        },
+        {
+          "line": 202,
+          "needle": "TelegramEngine.EngineData.Item.Messages.TopMessage.init"
+        },
+        {
+          "line": 258,
+          "needle": "self?.reloadManager.requestReload()"
+        },
+        {
+          "line": 289,
+          "needle": "widgetPresentationDataPath(rootPath:"
+        }
+      ]
+    },
+    {
+      "id": "X32",
+      "path": "submodules/TelegramUI/Sources/SpotlightContacts.swift",
+      "sha256": "dc8d0387eb91f2bfe7a94c86907cb037466a98212ae2e591f505320a59eeb85a",
+      "anchors": [
+        {
+          "line": 124,
+          "needle": "print(\"Spotlight: updating"
+        },
+        {
+          "line": 162,
+          "needle": "CSSearchableItem(uniqueIdentifier:"
+        },
+        {
+          "line": 184,
+          "needle": "private func manageableSpotlightContacts"
+        },
+        {
+          "line": 102,
+          "needle": "deleteSearchableItems(withIdentifiers:"
+        }
+      ]
+    },
+    {
+      "id": "X33",
+      "path": "Telegram/NotificationService/Sources/NotificationService.swift",
+      "sha256": "90f1548f637c9a2dd15c46e70e0f7a5d671384389e5357c43af2b1c28491c4e2",
+      "anchors": [
+        {
+          "line": 902,
+          "needle": "standaloneStateManager("
+        },
+        {
+          "line": 2553,
+          "needle": "override func didReceive("
+        },
+        {
+          "line": 2596,
+          "needle": "override func serviceExtensionTimeWillExpire()"
+        },
+        {
+          "line": 2585,
+          "needle": "contentHandler(initialContent)"
+        }
+      ]
+    },
+    {
+      "id": "X34",
+      "path": "submodules/TelegramUI/Sources/NotificationContentContext.swift",
+      "sha256": "dd4dbd7f645a33595f96eebcaec06835c48711d0ca539886ac93bf3fcd8418e4",
+      "anchors": [
+        {
+          "line": 148,
+          "needle": "public func didReceive(_ notification:"
+        },
+        {
+          "line": 192,
+          "needle": "let mediaBoxPath = accountsPath"
+        },
+        {
+          "line": 194,
+          "needle": "Data(contentsOf: URL(fileURLWithPath: mediaBoxPath"
+        },
+        {
+          "line": 245,
+          "needle": "standaloneChatMessagePhotoInteractiveFetched"
+        }
+      ]
+    },
+    {
+      "id": "X35",
+      "path": "submodules/TelegramCallsUI/Sources/CallKitIntegration.swift",
+      "sha256": "80b91f4e930531451c7359da69589121ac17f044f2267dc186a56c0d23867076",
+      "anchors": [
+        {
+          "line": 68,
+          "needle": "print(\"CallKitIntegration:"
+        },
+        {
+          "line": 91,
+          "needle": "private func donateIntent"
+        },
+        {
+          "line": 235,
+          "needle": "update.localizedCallerName = displayTitle"
+        },
+        {
+          "line": 273,
+          "needle": "self.provider.reportNewIncomingCall"
+        }
+      ]
+    },
+    {
+      "id": "X36",
+      "path": "Telegram/BroadcastUpload/BroadcastUploadExtension.swift",
+      "sha256": "ef149c48c8bb8b6a7725b007056d203ef0d8eacff430464eb514ecf96e0d1565",
+      "anchors": [
+        {
+          "line": 37,
+          "needle": "rootPath + \"/broadcast-coordination\""
+        },
+        {
+          "line": 129,
+          "needle": "rootPath + \"/embedded-broadcast-coordination\""
+        },
+        {
+          "line": 317,
+          "needle": "override public func broadcastStarted"
+        },
+        {
+          "line": 366,
+          "needle": "override public func processSampleBuffer"
+        }
+      ]
+    },
+    {
+      "id": "X37",
+      "path": "Telegram/WatchApp/tgwatch Watch App/TDClient.swift",
+      "sha256": "1c26d615dbf354674a339b8df35686c467c6d17114512ed9159b32106d1a118d",
+      "anchors": [
+        {
+          "line": 373,
+          "needle": "private func sendTdlibParameters"
+        },
+        {
+          "line": 384,
+          "needle": "databaseEncryptionKey: nil"
+        },
+        {
+          "line": 431,
+          "needle": "nonisolated static func databaseDirectory"
+        },
+        {
+          "line": 121,
+          "needle": "requestQrCodeAuthenticationIfNeeded()"
+        }
+      ]
+    },
+    {
+      "id": "X38",
+      "path": "submodules/DebugSettingsUI/Sources/DebugController.swift",
+      "sha256": "56bfe748db8e811319b3288c08062e9dc492b9650e4b990b03d1096e5b586722",
+      "anchors": [
+        {
+          "line": 314,
+          "needle": "Logger.shared.collectLogs()"
+        },
+        {
+          "line": 480,
+          "needle": "Logger.shared.collectLogs(prefix: \"/logs/share-logs\")"
+        }
+      ]
+    },
+    {
+      "id": "X39",
+      "path": "submodules/AppLock/Sources/AppLock.swift",
+      "sha256": "3b7b900dc72ab4086d6f208ba27c3dd7d9280bd8ae557188ba53e85b7e58d474",
+      "anchors": [
+        {
+          "line": 238,
+          "needle": "coveringView.updateSnapshot"
+        },
+        {
+          "line": 306,
+          "needle": "private func updateLockState"
+        }
+      ]
+    },
+    {
+      "id": "X40",
+      "path": "submodules/TelegramUI/Sources/MediaManager.swift",
+      "sha256": "04633d0849e8ee823b9de97a2247c2f5c0efaf7089cae1bd910428eae1773d32",
+      "anchors": [
+        {
+          "line": 278,
+          "needle": "MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo"
+        },
+        {
+          "line": 293,
+          "needle": "MPNowPlayingInfoCenter.default().nowPlayingInfo = nil"
+        },
+        {
+          "line": 298,
+          "needle": "MPRemoteCommandCenter.shared()"
+        }
+      ]
+    },
+    {
+      "id": "X41",
+      "path": "submodules/TelegramCore/Sources/PendingMessages/EnqueueMessage.swift",
+      "sha256": "75fa194d9671b33d87ee34e6fe2d888b5e87096b6c4831c5466ef2272f13bc62",
+      "anchors": [
+        {
+          "line": 572,
+          "needle": "public func enqueueMessages(account:"
+        },
+        {
+          "line": 680,
+          "needle": "func enqueueMessages(transaction:"
+        }
+      ]
+    },
+    {
+      "id": "X42",
+      "path": "submodules/TelegramUI/Sources/SharedAccountContext.swift",
+      "sha256": "b5a6caec29b76d6b99246061b877491aff66caa7bb69211c7edc21264fb3cb68",
+      "anchors": [
+        {
+          "line": 1064,
+          "needle": "self.widgetDataContext = WidgetDataContext"
+        },
+        {
+          "line": 1075,
+          "needle": "self.spotlightDataContext = SpotlightDataContext"
+        }
+      ]
+    },
+    {
+      "id": "X43",
+      "path": "Telegram/SiriIntents/IntentMessages.swift",
+      "sha256": "3ee60a9bdf0b25eb8df8db7b1bb4716ff07f7a6a5bcb1e09eb2e1ca56c74102f",
+      "anchors": [
+        {
+          "line": 20,
+          "needle": "func getMessages(account:"
+        },
+        {
+          "line": 33,
+          "needle": "func unreadMessages(account:"
+        },
+        {
+          "line": 104,
+          "needle": "func missedCalls(account:"
+        },
+        {
+          "line": 165,
+          "needle": "private func messageWithTelegramMessage"
+        }
+      ]
+    },
+    {
+      "id": "X44",
+      "path": "submodules/TelegramUI/Sources/TelegramRootController.swift",
+      "sha256": "377c9747b534a9307c1360c022268801d6a7361a89c849c88e471ec9e1b4c7cb",
+      "anchors": [
+        {
+          "line": 233,
+          "needle": "accountSettingsController.tabBarItemDebugTapAction"
+        }
+      ]
+    },
+    {
+      "id": "X45",
+      "path": "submodules/TabBarUI/Sources/TabBarController.swift",
+      "sha256": "65c528ab7126dd1f84f547cd3173511a815c1988117c676bd31a06c65c874a74",
+      "anchors": [
+        {
+          "line": 175,
+          "needle": "if strongSelf.debugTapCounter.1 >= 10"
+        },
+        {
+          "line": 178,
+          "needle": "strongSelf.controllers[index].tabBarItemDebugTapAction?()"
+        }
+      ]
+    }
+  ]
+}

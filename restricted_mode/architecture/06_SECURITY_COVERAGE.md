@@ -22,6 +22,10 @@
 | I09 | Ошибки/миграции/restore не открывают Full и не разрешают всё | R01/R04/R09; E06/E08/E11 | V03/V09/V10/V11 | Не реализовано; delete-on-error нельзя перенести без анализа |
 | I10 | Заявления о защите соответствуют доказанному уровню | R09/R10; вся карта | V14 и review evidence | Отчёты различают CODE / runtime / неизвестно; безопасность не заявлена |
 
+## Детализация штатных путей EXT-01
+
+[EXT-01_RESULT](EXT-01_RESULT.md) связывает 31 сценарий XT01–XT31 с исходниками, B0–B5 и V03–V14. Это дополнительная детализация обязательного T1, а не выполненные runtime-тесты. Expected results по identity/references/push зависят от D02/D03/D08. До device tests нельзя объявлять покрытие extensions/system outputs.
+
 ## Протокол экспериментов
 
 Все будущие V01–V14 выполняются на синтетических данных и выделенном тестовом аккаунте. Набор S: один visible и один hidden cloud dialog, общая группа, Saved Messages, archived/pinned/muted, topic; отдельные canary в тексте, имени, username, phone, filename, avatar, thumbnail, audio/video. Secret-chat fixture отдельный. Evidence не содержит реальных ключей/PIN/чужих сообщений: хранить assert/result, SHA, среду и обезличенное воспроизведение.
